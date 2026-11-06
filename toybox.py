@@ -13,4 +13,5 @@ def slugify(text: str) -> str:
     characters with a single hyphen, and strip leading/trailing
     hyphens. Example: "Hello, World!" -> "hello-world".
     """
-    raise NotImplementedError("slugify is not implemented yet")
+    import re
+    return re.sub(r'[^a-z0-9]+', '-', text.lower()).strip('-')
